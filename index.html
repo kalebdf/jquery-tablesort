@@ -7,8 +7,7 @@
 	}
 	.example {
 		float: left;
-		width: 40%;
-		margin: 5%;
+		width: 50%;
 	}
 	table {
 		font-size: 1em;
@@ -20,7 +19,7 @@
 		padding: 8px 16px;
 		text-align: left;
 	}
-	th {
+	th:not(.no-sort) {
 		background: #f4f4f4;
 		cursor: pointer;
 	}
@@ -45,6 +44,7 @@
 	<table>
 		<thead>
 			<tr>
+				<th class="no-sort">Select</th>
 				<th>Name</th>
 				<th>Band</th>
 				<th>Date of Birth</th>
@@ -53,24 +53,28 @@
 		</thead>
 		<tbody>
 			<tr>
+				<td><input type="checkbox"/></td>
 				<td>Thom Yorke</td>
 				<td>Radiohead</td>
 				<td data-sort-value="2">October 7, 1968</td>
 				<td>43</td>
 			</tr>
 			<tr>
+				<td><input type="checkbox"/></td>
 				<td>Justin Vernon</td>
 				<td>Bon Iver</td>
 				<td data-sort-value="4">April 30, 1981</td>
 				<td>30</td>
 			</tr>
 			<tr>
+				<td><input type="checkbox"/></td>
 				<td>Paul McCartney</td>
 				<td>The Beatles</td>
 				<td data-sort-value="1">June 18, 1942</td>
 				<td>69</td>
 			</tr>
 			<tr>
+				<td><input type="checkbox"/></td>
 				<td>Sam Beam</td>
 				<td>Iron &amp; Wine</td>
 				<td data-sort-value="3">July 26, 1974</td>

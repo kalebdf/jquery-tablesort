@@ -13,7 +13,7 @@ $(function() {
 		this.$table = $table;
 		this.$thead = this.$table.find('thead');
 		this.settings = $.extend({}, $.tablesort.defaults, settings);
-		this.$table.find('th').bind('click.tablesort', function() {
+		this.$thead.find(this.settings.thSelector).bind('click.tablesort', function() {
 			self.sort($(this));
 		});
 		this.index = null;
@@ -39,7 +39,8 @@ $(function() {
 			});
 			if (unsortedValues.length === 0) return;
 
-			self.$table.find('th').removeClass(self.settings.asc + ' ' + self.settings.desc);
+			self.$thead.find(self.settings.thSelector)
+				.removeClass(self.settings.asc + ' ' + self.settings.desc);
 
 			if (direction !== 'asc' && direction !== 'desc')
 				this.direction = this.direction === 'asc' ? 'desc' : 'asc';
@@ -88,7 +89,7 @@ $(function() {
 		},
 
 		destroy: function() {
-			this.$table.find('th').unbind('click.tablesort');
+			this.$thead.find(this.settings.thSelector).unbind('click.tablesort');
 			this.$table.data('tablesort', null);
 			return null;
 		}
@@ -100,7 +101,8 @@ $(function() {
 	$.tablesort.defaults = {
 		debug: $.tablesort.DEBUG,
 		asc: 'sorted ascending',
-		desc: 'sorted descending'
+		desc: 'sorted descending',
+		thSelector: 'th:not(.no-sort)'
 	};
 
 	$.fn.tablesort = function(settings) {
