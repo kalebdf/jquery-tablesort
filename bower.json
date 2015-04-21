@@ -7,5 +7,6 @@
     "authors": [
         { "name": "Kyle Fox" },
         { "name": "Kaleb Fulgham", "email": "kfulgham@sparefoot.com" }
-    ]
+    ],
+    "ignore" : []
 }
