@@ -47,7 +47,8 @@
 				<th class="no-sort">Select</th>
 				<th>Name</th>
 				<th>Band</th>
-				<th>Date of Birth</th>
+				<th class="date">Date of Birth</th>
+				<th>Height</th>
 				<th class="number">Age</th>
 			</tr>
 		</thead>
@@ -56,28 +57,32 @@
 				<td><input type="checkbox"/></td>
 				<td>Thom Yorke</td>
 				<td>Radiohead</td>
-				<td data-sort-value="2">October 7, 1968</td>
+				<td>October 7, 1968</td>
+				<td data-sort-value="73">6'1"</td>
 				<td>43</td>
 			</tr>
 			<tr>
 				<td><input type="checkbox"/></td>
 				<td>Justin Vernon</td>
 				<td>Bon Iver</td>
-				<td data-sort-value="4">April 30, 1981</td>
+				<td>April 30, 1981</td>
+				<td data-sort-value="71">5'11"</td>
 				<td>30</td>
 			</tr>
 			<tr>
 				<td><input type="checkbox"/></td>
 				<td>Paul McCartney</td>
 				<td>The Beatles</td>
-				<td data-sort-value="1">June 18, 1942</td>
+				<td>January 18, 1981</td>
+				<td data-sort-value="74">6'2"</td>
 				<td>69</td>
 			</tr>
 			<tr>
 				<td><input type="checkbox"/></td>
 				<td>Sam Beam</td>
 				<td>Iron &amp; Wine</td>
-				<td data-sort-value="3">July 26, 1974</td>
+				<td>July 26, 1974</td>
+				<td data-sort-value="66">5'6"</td>
 				<td>37</td>
 			</tr>
 		</tbody>
@@ -105,6 +110,10 @@
 
 		$('thead th.number').data('sortBy', function(th, td, sorter) {
 			return parseInt(td.text(), 10);
+		});
+
+		$('thead th.date').data('sortBy', function(th, td, tablesort) {
+		    return new Date(td.text());
 		});
 
 	});

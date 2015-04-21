@@ -1,0 +1,11 @@
+{
+    "name"          : "jquery-tablesort",
+    "version"       : "0.0.3",
+    "main"          : "jquery.tablesort.js",
+    "description" : "Tiny dead-simple jQuery plugin for sortable tables. Kyle Fox original",
+    "homepage": "https://github.com/kalebdf/jquery-tablesort",
+    "authors": [
+        { "name": "Kyle Fox" },
+        { "name": "Kaleb Fulgham", "email": "kfulgham@sparefoot.com" }
+    ]
+}
