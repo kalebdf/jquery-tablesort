@@ -1,6 +1,6 @@
 {
     "name"          : "jquery-tablesort",
-    "version"       : "0.0.3",
+    "version"       : "0.0.4",
     "main"          : "jquery.tablesort.js",
     "description" : "Tiny dead-simple jQuery plugin for sortable tables. Kyle Fox original",
     "homepage": "https://github.com/kalebdf/jquery-tablesort",

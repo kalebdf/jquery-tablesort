@@ -1,7 +1,7 @@
 /*
     A simple, lightweight jQuery plugin for creating sortable tables.
     https://github.com/kylefox/jquery-tablesort
-    Version 0.0.3
+    Version 0.0.4
 */
 
 $(function() {
@@ -43,6 +43,7 @@ $(function() {
                 sortValue = $val.data("sort-value"),
                 result,
                 textVal,
+                onlyNumber,
                 convertedNumber;
 
                 // Attempt to convert the sort value as a number
@@ -57,12 +58,16 @@ $(function() {
                 }
 
                 // Attempt to convert the text in the cell to a number else return it
-                textVal = $val.text();
-                result = (convertedNumber = +(textVal.replace(/[^0-9\.]/g, ''))) || textVal;
-                // 0 is a valid number
-                if (convertedNumber === 0) {
-                    return 0;
+                textVal = $val.text().toLowerCase();
+                onlyNumber = textVal.replace(/[$%,\s]/g, '');
+                if (onlyNumber.length > 0) {
+                    convertedNumber = +onlyNumber;
+                    // 0 is a valid number
+                    if (convertedNumber === 0) {
+                        return 0;
+                    }
                 }
+                result = convertedNumber || textVal;
                 return result;
             });
             if (unsortedValues.length === 0) return;
